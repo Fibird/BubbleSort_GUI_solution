@@ -3,7 +3,7 @@
 //
 
 #pragma once
-
+#include "Block.h"
 
 class CBubbleSort_GUIView : public CView
 {

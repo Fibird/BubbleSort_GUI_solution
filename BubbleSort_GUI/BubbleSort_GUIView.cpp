@@ -46,7 +46,7 @@ BOOL CBubbleSort_GUIView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CBubbleSort_GUIView drawing
 
-void CBubbleSort_GUIView::OnDraw(CDC* /*pDC*/)
+void CBubbleSort_GUIView::OnDraw(CDC* pDC)
 {
 	CBubbleSort_GUIDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -54,6 +54,12 @@ void CBubbleSort_GUIView::OnDraw(CDC* /*pDC*/)
 		return;
 
 	// TODO: add draw code for native data here
+	//pDC->Rectangle(300, 300, 280, 20);
+
+	POINT p{ 300, 300 };
+	CBlock b(100, p);
+
+	b.ShowBlock(pDC, p);
 }
 
 
