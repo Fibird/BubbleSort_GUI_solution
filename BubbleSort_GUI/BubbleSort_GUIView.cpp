@@ -16,12 +16,16 @@
 #define new DEBUG_NEW
 #endif
 
+#include "Shelf.h"
 
 // CBubbleSort_GUIView
 
 IMPLEMENT_DYNCREATE(CBubbleSort_GUIView, CView)
 
 BEGIN_MESSAGE_MAP(CBubbleSort_GUIView, CView)
+	ON_COMMAND(ID_TEST_START, &CBubbleSort_GUIView::OnTestStart)
+	ON_WM_TIMER()
+	ON_COMMAND(ID_SORT_BUBBLE, &CBubbleSort_GUIView::OnSortBubble)
 END_MESSAGE_MAP()
 
 // CBubbleSort_GUIView construction/destruction
@@ -29,7 +33,6 @@ END_MESSAGE_MAP()
 CBubbleSort_GUIView::CBubbleSort_GUIView()
 {
 	// TODO: add construction code here
-
 }
 
 CBubbleSort_GUIView::~CBubbleSort_GUIView()
@@ -46,6 +49,7 @@ BOOL CBubbleSort_GUIView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CBubbleSort_GUIView drawing
 
+
 void CBubbleSort_GUIView::OnDraw(CDC* pDC)
 {
 	CBubbleSort_GUIDoc* pDoc = GetDocument();
@@ -55,11 +59,12 @@ void CBubbleSort_GUIView::OnDraw(CDC* pDC)
 
 	// TODO: add draw code for native data here
 	//pDC->Rectangle(300, 300, 280, 20);
-
-	POINT p{ 300, 300 };
-	CBlock b(100, p);
-
-	b.ShowBlock(pDC, p);
+	CShelf s(10, POINT{20, 300});
+	for (CBlock &b : s.shelf)
+	{
+		b.ShowBlock(pDC);
+	}
+	
 }
 
 
@@ -85,3 +90,26 @@ CBubbleSort_GUIDoc* CBubbleSort_GUIView::GetDocument() const // non-debug versio
 
 
 // CBubbleSort_GUIView message handlers
+
+
+void CBubbleSort_GUIView::OnTestStart()
+{
+	// TODO: Add your command handler code here
+	SetTimer(1, 1000, NULL);
+}
+
+
+void CBubbleSort_GUIView::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: Add your message handler code here and/or call default
+	Invalidate();
+	CView::OnTimer(nIDEvent);
+	
+}
+
+
+void CBubbleSort_GUIView::OnSortBubble()
+{
+	// TODO: Add your command handler code here
+	cb.test();
+}

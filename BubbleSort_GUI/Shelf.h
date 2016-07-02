@@ -1,6 +1,9 @@
 #pragma once
-#include <list>
+
+
 #include "Block.h"
+#include <memory>
+#include <list>
 
 class CShelf
 {
@@ -12,5 +15,6 @@ protected:
 public:
 	CShelf();
 	CShelf(UINT s, POINT p);
+	BOOL InitShelf();
 	virtual ~CShelf();
 };

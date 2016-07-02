@@ -7,11 +7,11 @@ CBlock::CBlock()
 }
 
 CBlock::CBlock(UINT h, POINT p, COLORREF c)
-	: height{ h }, pos{ p }, color{ c }
+	: height(h), pos(p), color(c)
 {
 }
 
-void CBlock::ShowBlock(CDC * pDC, POINT pos)
+void CBlock::ShowBlock(CDC * pDC)
 {
 	CBrush brush(color);
 	CBrush *pOldBrush = pDC->SelectObject(&brush);
@@ -19,9 +19,34 @@ void CBlock::ShowBlock(CDC * pDC, POINT pos)
 	pDC->SelectObject(pOldBrush);
 }
 
+COLORREF CBlock::GetColor()
+{
+	return color;
+}
+
+UINT CBlock::GetHeight()
+{
+	return height;
+}
+
+POINT CBlock::GetPos()
+{
+	return pos;
+}
+
 void CBlock::SetColor(COLORREF color)
 {
 	color = color;
+}
+
+void CBlock::SetHeight(UINT h)
+{
+	height = h;
+}
+
+void CBlock::SetPos(POINT p)
+{
+	pos = p;
 }
 
 void CBlock::glow()
@@ -33,6 +58,16 @@ void CBlock::glow()
 void CBlock::unglow()
 {
 	SetColor(RGB(0, 0, 0));
+}
+
+void CBlock::test()
+{
+	int i = 0;
+	while (TRUE)
+	{
+		SetColor(RGB(255, 255, 255 - 1));
+		i = i + 5;
+	}
 }
 
 

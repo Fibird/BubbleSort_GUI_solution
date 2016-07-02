@@ -10,7 +10,7 @@ class CBubbleSort_GUIView : public CView
 protected: // create from serialization only
 	CBubbleSort_GUIView();
 	DECLARE_DYNCREATE(CBubbleSort_GUIView)
-
+	CBlock cb;
 // Attributes
 public:
 	CBubbleSort_GUIDoc* GetDocument() const;
@@ -33,10 +33,15 @@ public:
 #endif
 
 protected:
-
+	
 // Generated message map functions
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	static int count;
+	afx_msg void OnTestStart();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnSortBubble();
 };
 
 #ifndef _DEBUG  // debug version in BubbleSort_GUIView.cpp
