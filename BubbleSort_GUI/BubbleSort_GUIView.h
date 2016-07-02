@@ -39,9 +39,10 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	static int count;
-	afx_msg void OnTestStart();
+//	afx_msg void OnTestStart();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
-	afx_msg void OnSortBubble();
+//	afx_msg void OnSortBubble();
+	afx_msg void OnSwitchStart();
 };
 
 #ifndef _DEBUG  // debug version in BubbleSort_GUIView.cpp

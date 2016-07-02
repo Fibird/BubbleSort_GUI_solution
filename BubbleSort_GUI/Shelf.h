@@ -15,6 +15,5 @@ protected:
 public:
 	CShelf();
 	CShelf(UINT s, POINT p);
-	BOOL InitShelf();
 	virtual ~CShelf();
 };

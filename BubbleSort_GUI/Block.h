@@ -7,10 +7,11 @@ protected:
 	UINT height;
 	COLORREF color;
 	POINT pos;
-	UINT width = 10;
+	UINT width;
 public:
 	CBlock();
-	CBlock(UINT h, POINT p, COLORREF c = RGB(0, 0, 0));
+	CBlock(UINT h, POINT p, UINT w, COLORREF c = RGB(0, 0, 0));
+	CBlock(const CBlock& c);
 	void ShowBlock(CDC* pDC);
 	COLORREF GetColor();
 	UINT GetHeight();

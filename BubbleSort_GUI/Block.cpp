@@ -6,9 +6,17 @@ CBlock::CBlock()
 {
 }
 
-CBlock::CBlock(UINT h, POINT p, COLORREF c)
-	: height(h), pos(p), color(c)
+CBlock::CBlock(UINT h, POINT p, UINT w, COLORREF c)
+	: height(h), pos(p), width(w), color(c)
 {
+}
+
+CBlock::CBlock(const CBlock & c)
+{
+	height = c.height;
+	pos = c.pos;
+	width = c.width;
+	color = c.color;
 }
 
 void CBlock::ShowBlock(CDC * pDC)

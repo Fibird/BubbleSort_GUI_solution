@@ -23,9 +23,9 @@
 IMPLEMENT_DYNCREATE(CBubbleSort_GUIView, CView)
 
 BEGIN_MESSAGE_MAP(CBubbleSort_GUIView, CView)
-	ON_COMMAND(ID_TEST_START, &CBubbleSort_GUIView::OnTestStart)
 	ON_WM_TIMER()
-	ON_COMMAND(ID_SORT_BUBBLE, &CBubbleSort_GUIView::OnSortBubble)
+//	ON_COMMAND(ID_SORT_BUBBLE, &CBubbleSort_GUIView::OnSortBubble)
+ON_COMMAND(ID_SWITCH_START, &CBubbleSort_GUIView::OnSwitchStart)
 END_MESSAGE_MAP()
 
 // CBubbleSort_GUIView construction/destruction
@@ -33,6 +33,7 @@ END_MESSAGE_MAP()
 CBubbleSort_GUIView::CBubbleSort_GUIView()
 {
 	// TODO: add construction code here
+	//SetTimer(1, 1000, NULL);
 }
 
 CBubbleSort_GUIView::~CBubbleSort_GUIView()
@@ -57,14 +58,12 @@ void CBubbleSort_GUIView::OnDraw(CDC* pDC)
 	if (!pDoc)
 		return;
 
-	// TODO: add draw code for native data here
-	//pDC->Rectangle(300, 300, 280, 20);
-	CShelf s(10, POINT{20, 300});
+	CShelf s(10, POINT{400, 400});
+
 	for (CBlock &b : s.shelf)
 	{
 		b.ShowBlock(pDC);
 	}
-	
 }
 
 
@@ -91,25 +90,23 @@ CBubbleSort_GUIDoc* CBubbleSort_GUIView::GetDocument() const // non-debug versio
 
 // CBubbleSort_GUIView message handlers
 
-
-void CBubbleSort_GUIView::OnTestStart()
-{
-	// TODO: Add your command handler code here
-	SetTimer(1, 1000, NULL);
-}
-
-
 void CBubbleSort_GUIView::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: Add your message handler code here and/or call default
 	Invalidate();
 	CView::OnTimer(nIDEvent);
-	
 }
 
 
-void CBubbleSort_GUIView::OnSortBubble()
+//void CBubbleSort_GUIView::OnSortBubble()
+//{
+//	// TODO: Add your command handler code here
+//	cb.test();
+//}
+
+
+void CBubbleSort_GUIView::OnSwitchStart()
 {
 	// TODO: Add your command handler code here
-	cb.test();
+	SetTimer(1, 1, NULL);
 }
