@@ -15,5 +15,7 @@ protected:
 public:
 	CShelf();
 	CShelf(UINT s, POINT p);
+	//void Push(CBlock b);
+	//void Pop(int i);
 	virtual ~CShelf();
 };

@@ -24,8 +24,7 @@ IMPLEMENT_DYNCREATE(CBubbleSort_GUIView, CView)
 
 BEGIN_MESSAGE_MAP(CBubbleSort_GUIView, CView)
 	ON_WM_TIMER()
-//	ON_COMMAND(ID_SORT_BUBBLE, &CBubbleSort_GUIView::OnSortBubble)
-ON_COMMAND(ID_SWITCH_START, &CBubbleSort_GUIView::OnSwitchStart)
+	ON_COMMAND(ID_SWITCH_START, &CBubbleSort_GUIView::OnSwitchStart)
 END_MESSAGE_MAP()
 
 // CBubbleSort_GUIView construction/destruction
@@ -96,13 +95,6 @@ void CBubbleSort_GUIView::OnTimer(UINT_PTR nIDEvent)
 	Invalidate();
 	CView::OnTimer(nIDEvent);
 }
-
-
-//void CBubbleSort_GUIView::OnSortBubble()
-//{
-//	// TODO: Add your command handler code here
-//	cb.test();
-//}
 
 
 void CBubbleSort_GUIView::OnSwitchStart()

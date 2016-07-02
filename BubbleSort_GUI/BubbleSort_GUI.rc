@@ -143,17 +143,18 @@ BEGIN
         MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
         MENUITEM "S&plit",                      ID_WINDOW_SPLIT
     END
-    POPUP "&Help"
+    POPUP "switch"
     BEGIN
-        MENUITEM "&About BubbleSort_GUI...",    ID_APP_ABOUT
-    END
-    POPUP "test"
-    BEGIN
-        MENUITEM "start",                       ID_TEST_START
+        MENUITEM "start",                       ID_SWITCH_START
+        MENUITEM "end",                         ID_SWITCH_END
     END
     POPUP "sort"
     BEGIN
         MENUITEM "bubble",                      ID_SORT_BUBBLE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About BubbleSort_GUI...",    ID_APP_ABOUT
     END
 END
 

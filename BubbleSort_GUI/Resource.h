@@ -6,7 +6,8 @@
 #define IDP_OLE_INIT_FAILED             100
 #define IDR_MAINFRAME                   128
 #define IDR_BubbleSort_GUITYPE          130
-#define ID_TEST_START                   32771
+#define ID_SWITCH_START                 32771
+#define ID_SWITCH_END					32773
 #define ID_SORT_BUBBLE                  32772
 
 // Next default values for new objects
